@@ -43,13 +43,24 @@ a{
         <main>
         <h2>Quinn's recipe site</h2>
         <p class="large-gap">Welcome to my website! Below are two delicious recipes for you to make.</p>
-        <img src="../../images/pumpkinpie.jpeg" alt="Pumpkin Pie" width=350 height=300 class="center-block">
+        <img src="../../images/pumpkinpie.jpeg"
+           srcset="../../images/pumpkinpiesmall.jpeg 400w,
+                   ../../images/pumpkinpiemedium.jpeg 800w,
+                   ../../images/pumpkinpielarge.jpeg 1200w"
+           sizes="(max-height:500px) 600px, 400px"
+alt="Pumpkin Pie" width=350 height=300 class="center-block">
         <br>
         <div style="text-align: center;">
         <a href="2.html">Pumpkin Pie</a>
         </div>
         <p class="large-gap"></p>
-        <img src="../../images/frenchtoast.jpeg" alt="French Toast" width=350 height=300 class="center-block">
+        <img src="../../images/frenchtoast.jpeg"
+           srcset="../../images/frenchtoastsmall.jpeg 400w,
+                   ../../images/frenchtoastmedium.jpeg 800w,
+                   ../../images/frenchtoastlarge.jpeg 1200w"
+           sizes="(max-height: 600px) 600px, 400px"
+
+        alt="French Toast" width=350 height=300 class="center-block">
         <br>
         <div style="text-align: center;">
             <a href="1.html">French Toast</a>

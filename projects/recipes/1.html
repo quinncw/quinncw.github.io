@@ -3,8 +3,6 @@
     <head>
         <title>Quinn's Recipes</title>
         <script src="../../validate.js"></script>
-    </head>
-    <body>
 <style>
  body{
      background-color:LemonChiffon;
@@ -14,6 +12,9 @@ p,li{
      font-size:20px;
      text-align:center;
      font-family: 'Trebuchet MS', sans-serif;
+}
+li{
+    margin-bottom: 15px;
 }
 h2{
      color:rgb(127,174,240);
@@ -49,6 +50,8 @@ a{
      margin-bottom: 150px;
 }
 </style> 
+    </head>
+    <body>
 <h2>
 French Toast
         </h2>
@@ -57,7 +60,12 @@ French Toast
             <h3>
                 "Quote"-Family Member
             </h3>
-            <img src="../../images/frenchtoast.jpeg" alt="French Toast" height=500px width=600px class="center-block">
+            <img src="../../images/frenchtoast.jpeg"
+            srcset="../../images/frenchtoastsmall.jpeg 400w,
+                    ../../images/frenchtoastmedium.jpeg 800w,
+                    ../../images/frenchtoastlarge.jpeg 1200w"
+            sizes="(max-width: 600px) 400px, 800px"
+            alt="French Toast" width=600 height=600 class="center-block">
             <p>Whether it was a holiday or Saturday morning, French Toast was always one of my favorite things when I was younger. Because of that, I've decided to choose it for my project to help spread this delicious breakfast meal.</p>
             <br>
             <h4>Yield
@@ -67,11 +75,8 @@ French Toast
             <p>If you've never made this before and aren't sure about what you should and shouldn't do, I've got you covered! :)</p>
             <ul>
                 <li>The best way to serve french toast is with maple syrup, powdered sugar and fruit. If you want somthing a little more savory, bacon or sausage is the way to go!</li>
-                <br>
                 <li>Because you should cook one or two at a time, putting your finished pieces (while you're cooking the rest) in the oven at about 200 F keeps them warm and crispy.</li>
-                <br>
                 <li>If you have extra eggs, adding an extra yolk will make it much richer and gives it a silkier texture.</li>
-                <br>
                 <li>If you want some extra fanciness, add some sugar before you put it on the pan the brulee the toast.</li>
             </ul>
     <h4>Ingredients</h4>
