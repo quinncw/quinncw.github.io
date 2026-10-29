@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles1.css">
         <title>WDMM - Quinn</title>
 	<style>
 h2{
@@ -39,16 +40,24 @@ br{
     </head>
     <body>
         <main>
-            <h2 class="fade-in">Welcome to my home page. Here are some links.</h2>
-<div style="text-align: center;">
-<a href="practice/terminal.html">My Tutorial For Vim</a>
+            <h2 class="fade-in">Welcome to my page! Visit these links or explore the homepage.</h2>
+<div id="navbar">
+<a href="#home" class="nav-link active">Home</a>
 <br>
-<a href="practice/schedule.html">My School Schedule</a>
+<a href="#classwork" class="nav-link">AT Classwork & Projects</a>
 <br>
-<a href="practice/box_model.html">Box Model Classwork</a>
+<a href="#about" class="nav-link">About Me!</a>
 <br>
-<a href="projects/index.html">Project Homepage</a>
+<a href="#blog" class="nav-link">dedicated blog</a>
 </div>
+<div id="content">
+    <div id="home" class="page active-page">
+        <h1>This is my home page.</h1>
+    </div>
+    <div id="classwork" class="page">
+        <h1>This is where I'll have my classwork.</h1>
+    </div>
+    <div id="about" class="page">
 <h2>You can also learn a bit about me by reading the below section. :)</h2>
 <p> Welcome to my website! Above are, as you can see, some links to my classwork assignments and also projects.</p>
 <p> For those interested, here is a little above me:</p>
@@ -64,6 +73,13 @@ Minecraft, Postal and similar FPS games.</p>
 <p>We didn't win but everyone had a lot of fun. Here's a photo of me from that game. (And yes I did stop that shot).</p>
 <img src="/images/capone-shootout1.JPG" alt="me playing" width=767 height=511
 class="center-block">
+    </div>
+    <div id="blog" class="page">
+        <p>blog will go here.</p>
+    </div>
+</div>
+
+<script src="script.js></script>
         </main>
     </body>
 </html>
