@@ -9,5 +9,12 @@ footer{
     background-color: Crimson;
     color: white;
 }
-
-
+#tiny{
+    font-size:0.5em;
+}
+header{
+    margin: 20px;
+    padding: 100px;
+    margin-right: 200px;
+    border: 5px solid black;
+}

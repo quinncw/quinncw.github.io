@@ -1,0 +1,28 @@
+#navbar {
+    background-color: #333;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+}
+#navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+}
+#navbar a.active {
+    background-color: Red;
+    border-radius: 2px;
+}
+#content {
+    margin-top:80px;
+    padding:20px;
+}
+.page{
+    display: none;
+}
+.page.active-page {
+    display: block;
+}
