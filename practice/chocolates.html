@@ -1,0 +1,261 @@
+ <html>
+    <head>
+        <style>
+            body{
+                background: linear-gradient(135deg, #1a2980, #26d0ce);
+                height: 100vh;
+            }
+            h1{
+                text-align: center;
+                font-family: Tahoma, sans-serif;
+                color: white;
+            }
+            .container {
+              display: grid;
+              width: 80vw;
+              height: 80vh;
+              margin: auto;
+              grid-template-columns: 1fr 1fr 1fr;
+              grid-template-rows: 1fr 1fr 1fr;
+              background-color: Thistle;
+              padding: 10px;
+              border-radius: 20px;
+              border: 8px solid red;
+            }
+            .heart {
+              height: 20vh; /* adjust to control the size */
+              aspect-ratio: 1;
+              --_m: radial-gradient(#000 69%,#0000 70%) 84.5%/50%;
+              -webkit-mask-box-image: var(--_m);
+                         mask-border: var(--_m);
+              clip-path: polygon(-41% 0,50% 91%, 141% 0);
+              background-color: chocolate;
+              margin: auto;
+            }
+            /* fallback until better support for mask-border */
+            @supports not (-webkit-mask-box-image: var(--_m)) { 
+              .heart {
+                mask:
+                 radial-gradient(at 70% 31%,#000 29%,#0000 30%),
+                 radial-gradient(at 30% 31%,#000 29%,#0000 30%),
+                 conic-gradient(#000 0 0) bottom/100% 50% no-repeat;
+              }
+            }
+            #chocolateheart{
+                grid-column-start: 2;
+                grid-row-start:2;
+            }
+            /* HTML: <div class="lollipop"></div> */
+.lollipop {
+  --r: 50px; /* control the size */
+  --c1: cornsilk;
+  --c2: saddlebrown;
+
+  height: calc(2* var(--r));
+  aspect-ratio: 1;
+  clip-path: circle();
+  display: flex;
+}
+.lollipop:before,
+.lollipop:after {
+  content: "";
+  flex: 1;
+  --g1:radial-gradient(50% 50%,var(--c1) 99%,#0000) no-repeat;
+  --g2:radial-gradient(50% 50%,var(--c2) 99%,#0000) no-repeat;
+  background: var(--g1) calc(sin(60deg)* var(--r)) calc(var(--r) / -2), var(--g2) calc(var(--r) / 2) calc(sin(-60deg)* var(--r)), var(--g1) 0 calc(-1* var(--r)), var(--g2) calc(var(--r) / -2) calc(sin(-60deg)* var(--r)), var(--g1) calc(sin(-60deg)* var(--r)) calc(var(--r) / -2), var(--g2) calc(-1* var(--r)) 0, var(--g1) calc(sin(-60deg)* var(--r)) calc(var(--r) / 2);
+  background-size: 200%;
+}
+.lollipop:after {
+   rotate: 180deg;
+}
+            .lilbits{
+                grid-column-start: 1;
+                grid-row-start: 1;
+                display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              grid-template-rows: 1fr 1fr 1fr;
+            }
+            .swirls{
+                grid-column-start: 1;
+                grid-row-start:2;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr;
+            }
+            .circles{
+                width:10vh;
+                height:10vh;
+                border-radius:50%;
+                margin: auto;
+                display: grid;
+                place-items: center;
+                font-size: 2em;
+            }
+            .circle{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                margin: auto;
+            }
+            #swirly{
+                grid-column-start: 1;
+                    grid-row-start: 2;
+            }
+             #swirly2{
+                grid-column-start: 2;
+                    grid-row-start: 2;
+            }
+            #swirly3{
+                grid-column-start: 3;
+                    grid-row-start: 2;
+            }
+
+                      #mnm{
+                grid-column-start:1;
+                grid-row-start:1;
+                background-color:brown;
+        
+            }
+                      #bar{
+                          grid-column-start:1;
+                          grid-column-end:3;
+                          grid-row-start: 3;
+                          background-color: red;
+                          color:white;
+                          font-size: 100px;
+                          text-align:center;
+                      }
+
+            #mnm2{
+                grid-column-start:2;
+                grid-row-start:1;
+                background-color:green;
+        
+            }
+              #mnm3{
+                grid-column-start:3;
+                grid-row-start:1;
+                background-color:pink;
+        
+             }
+             #mnm4{
+                grid-column-start:1;
+                grid-row-start:2;
+                background-color:lime;
+        
+            }
+             #mnm5{
+                grid-column-start:2;
+                grid-row-start:2;
+                background-color:aqua;
+        
+            }
+             #mnm6{
+                grid-column-start:3;
+                grid-row-start:2;
+                background-color:yellow;
+        
+            }
+             #mnm7{
+                grid-column-start:1;
+                grid-row-start:3;
+                background-color:orange;
+        
+            }
+             #mnm8{
+                grid-column-start:2;
+                grid-row-start:3;
+                background-color:blue;
+        
+            }
+            #mnm9{
+                grid-column-start:3;
+                grid-row-start:3;
+                background-color:red;
+        
+            }
+.starburst {
+  width: 200px; /* adjust to control the size */
+  aspect-ratio: 1;
+  clip-path: polygon(100% 50%,77.72% 61.48%,85.36% 85.36%,61.48% 77.72%,50% 100%,38.52% 77.72%,14.64% 85.36%,22.28% 61.48%,0% 50%,22.28% 38.52%,14.64% 14.64%,38.52% 22.28%,50% 0%,61.48% 22.28%,85.36% 14.64%,77.72% 38.52%);
+}
+            .flower {
+  width: 200px; /* adjust to control the size */
+  aspect-ratio: 1;
+  --g:/20.56% 20.56% radial-gradient(#000 calc(71% - 1px),#0000 71%) no-repeat;
+  mask: 100% 50% var(--g),93.301% 75% var(--g),75% 93.301% var(--g),50% 100% var(--g),25% 93.301% var(--g),6.699% 75% var(--g),0% 50% var(--g),6.699% 25% var(--g),25% 6.699% var(--g),50% 0% var(--g),75% 6.699% var(--g),93.301% 25% var(--g),radial-gradient(100% 100%,#000 38.366%,#0000 calc(38.366% + 1px));
+}
+            /* HTML: <div class="triangle"></div> */
+.triangle {
+  width: 180px;
+  aspect-ratio: 1/cos(30deg);
+  clip-path: polygon(50% 0,100% 100%,0 100%);
+}
+            #triangle{
+                grid-column-start:3;
+                grid-row-start:2;
+                background-color:SaddleBrown;
+            }
+            #flower{
+                grid-column-start:3;
+                grid-row-start:1;
+                background-color:Cornsilk;
+            }
+            #starburst{
+                grid-column-start:2;
+                grid-row-start:1;
+                background-color:saddlebrown;
+            }
+            #circle{
+                grid-column-start:3;
+                grid-row-start:3;
+                background-color:Chocolate;
+            }
+                  </style>
+    </head>
+    <body>
+        <h1>Here, I got you some chocolates &lt;3</h1>
+        <div class="container">
+            <div class="heart" id="chocolateheart"></div>
+            <div class="starburst" id="starburst"></div>
+            <div class="lilbits">
+                <div class="circles" id="mnm">
+                m
+                </div>
+                <div class="circles" id="mnm2">
+                    m
+                </div>
+                 <div class="circles" id="mnm3">
+                    m
+                 </div>
+                  <div class="circles" id="mnm4">
+                    m
+                 </div>
+                     <div class="circles" id="mnm5">
+                    m
+                 </div>
+                 <div class="circles" id="mnm6">
+                m
+                </div>
+                <div class="circles" id="mnm7">
+                m
+                </div>
+                <div class="circles" id="mnm8">
+                m
+                </div>
+                 <div class="circles" id="mnm9">
+                m
+                </div>
+            </div>
+            <div class="swirls">
+                  <div class="lollipop" id="swirly"></div>
+                <div class="lollipop" id="swirly2"></div>
+                <div class="lollipop" id="swirly3"></div>
+            </div>
+                <div id="bar">KitKat</div>
+                <div class="flower" id="flower"></div>
+                <div class="triangle" id="triangle"></div>
+                <div class="circle" id="circle"></div>
+        </div>
+    </body>
+</html> 
