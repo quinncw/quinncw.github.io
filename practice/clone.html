@@ -6,19 +6,35 @@
   <title>Bandcamp Clone</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 0 auto; }
+    body { font-family: system-ui, sans-serif; max-width: none; margin: 0 auto; }
     img { display: block; width: 100%; background: #ddd; }
     h1 { font-size: 2rem; margin-bottom: 0.5rem; }
     h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
     h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
     p { color: #555; line-height: 1.6; margin-bottom: 0.5rem; }
     button { padding: 0.5rem 1.5rem; border: none; border-radius: 5px; background: #333; color: #fff; cursor: pointer; }
-    nav { display: flex; gap: 1rem; }
-    nav a { text-decoration: none; color: inherit; }
+    nav { display: flex; gap: 1rem; justify-content: center; }
+    nav a { text-decoration: none; color: grey; font-size: 0.8125rem }
+    main { max-width: 1250px; margin: auto;}
     /* Layout */
     .c1 {
       padding: 1rem;
     }
+     .c2 {
+      display: grid;
+      grid:
+        '. . button1 button2' 30px
+        / 1fr 2fr 70px 60px;
+      padding: 1rem;
+    }
+    .c99 {
+      grid-area: button1;
+      margin-right:0;
+    }
+    .c100 {
+      grid-area: button2;
+      margin-right:0;    
+}
     .c3 {
       display: grid;
       grid-template-columns: 2fr;
@@ -27,29 +43,38 @@
     .c4 {
       display: grid;
       grid:
-        'img date' 25px
-        'img title' 100px
-        'img content' 75px
-        'img author' 25px
+        'img date' 50px
+        'img title' 150px
+        'img content' 100px
+        'img author' 50px
         / 2fr 1fr;
       padding: 2rem;
     }
     .c5 {
       grid-area: img;
-      width: 65%;
+      width: 90%;
+      max-height: 100%;
       aspect-ratio: 4 / 3;
     }
     .c6 {
+        color: grey;
       grid-area: date;
+      font-size:15px;
     }
     .c7 {
       grid-area: title;
+      padding-bottom: 1rem;
+      font-size: 40px;
     }
     .c8 {
       grid-area: content;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
     }
     .c9 {
+      color: grey;
       grid-area: author;
+      margin-top: 35px;
     }
     .c10 {
       display: grid;
@@ -59,27 +84,38 @@
         'title title2 title3' auto
         / 1fr 1fr 1fr;
       padding: 2rem;
+      column-gap: 2rem;
+      row-gap: 0.5rem;
     }
     .c11 {
       grid-area: img;
-      aspect-ratio: 4 / 3;
+      height: auto;
+      max-width: 100%;
     }
     .c12 {
       grid-area: img2;
-      aspect-ratio: 4 / 3;
+      height: auto;
+      max-width: 100%;
     }
     .c13 {
       grid-area: img3;
-      aspect-ratio: 4 / 3;
+      height:auto;
+      max-width: 100%;
     }
     .c14 {
       grid-area: date;
+      font-size: 0.75rem;
+      color: gray;
     }
     .c15 {
       grid-area: date2;
+      font-size: 0.75rem;
+      color: gray;
     }
     .c16 {
       grid-area: date3;
+      font-size: 0.75rem;
+      color: gray;
     }
     .c17 {
       grid-area: title;
@@ -279,33 +315,56 @@
     .c66 {
       grid-area: section2;
     }
+    hr{
+        background-color: gainsboro;
+        border-width:0;
+        color:gainsboro;
+        height: 1px;
+        width: 200%;
+    }
+    button{
+        background-color: white;
+        padding: 5px;
+        color: black;
+
+    }
   </style>
 </head>
 <body>
 <header class="c1">
-    <h1>Page Heading</h1>
+    <div class="c2">
+        <h1>bandcamp</h1>
+        <button class="c99"><b>Sign Up</b></button>
+        <button class="c100"><b>Log In</b></button>
+    </div>
+    <br>
   <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Work</a>
-    <a href="#">Contact</a>
+    <a href="#">lists</a>
+    <a href="#">features</a>
+    <a href="#">album of the day</a>
+    <a href="#">view all</a>
   </nav>
+  <br>
+  <hr>
 </header>
 <main class="c3">
   <section class="c4">
-    <img src="placeholder.jpg" alt="" class="c5">
-     <p class="c6">UNDERGROUND MEDICINE - November 09, 2026</p>
-    <h2 class="c7">Section Heading</h2>
-    <p class="c8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
-    <p class="c9">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <img src="../images/bandcamp1.jpg" alt="Sockeye Album" class="c5">
+    <p class="c6"><b>UNDERGROUND MEDICINE</b> - November 09, 2026</p>
+    <h2 class="c7">Underground Medicine #8: The Problematic Genius of Sockeye</h2>
+    <p class="c8">"None of this music is any good, but it sure [flipping] beats any [goshdarn] thing Green Day ever recorded."</p>
+    <p class="c9">By Erick Bradshaw</p>
   </section>
   <section class="c10">
-    <img src="placeholder.jpg" alt="" class="c11">
-    <img src="placeholder.jpg" alt="" class="c12">
-    <img src="placeholder.jpg" alt="" class="c13">
-    <p class="c14">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
-    <p class="c15">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
-    <p class="c16">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <img src="../images/bandcamp2.jpg" alt="" class="c11">
+    <img src="../images/bandcamp3.jpg" alt="" class="c12">
+    <img src="../images/bandcamp4.jpg" alt="" class="c13">
+    <p class="c14"><b>LEFT BEHIND BY STREAMING</b>
+· November 09, 2026 </p>
+    <p class="c15"><b>FEATURES</b>
+· November 06, 2026 </p>
+    <p class="c16"><b>SCENE REPORT</b>
+· November 03, 2026 </p>
     <p class="c17">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
     <p class="c18">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
     <p class="c19">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
@@ -420,6 +479,7 @@
   <p class="c65">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
   <p class="c66">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
 </footer>
+<br>
   <script>
   (function() {
     var s = document.createElement("script");
