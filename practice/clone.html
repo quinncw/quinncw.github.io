@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bandcamp Clone</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 0 auto; }
+    img { display: block; width: 100%; background: #ddd; }
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+    p { color: #555; line-height: 1.6; margin-bottom: 0.5rem; }
+    button { padding: 0.5rem 1.5rem; border: none; border-radius: 5px; background: #333; color: #fff; cursor: pointer; }
+    nav { display: flex; gap: 1rem; }
+    nav a { text-decoration: none; color: inherit; }
+    /* Layout */
+    .c1 {
+      padding: 1rem;
+    }
+    .c3 {
+      display: grid;
+      grid-template-columns: 2fr;
+      padding: 2rem;
+    }
+    .c4 {
+      display: grid;
+      grid:
+        'img date' 25px
+        'img title' 100px
+        'img content' 75px
+        'img author' 25px
+        / 2fr 1fr;
+      padding: 2rem;
+    }
+    .c5 {
+      grid-area: img;
+      width: 65%;
+      aspect-ratio: 4 / 3;
+    }
+    .c6 {
+      grid-area: date;
+    }
+    .c7 {
+      grid-area: title;
+    }
+    .c8 {
+      grid-area: content;
+    }
+    .c9 {
+      grid-area: author;
+    }
+    .c10 {
+      display: grid;
+      grid:
+        'img   img2   img3' 195px
+        'date  date2  date3' 20px
+        'title title2 title3' auto
+        / 1fr 1fr 1fr;
+      padding: 2rem;
+    }
+    .c11 {
+      grid-area: img;
+      aspect-ratio: 4 / 3;
+    }
+    .c12 {
+      grid-area: img2;
+      aspect-ratio: 4 / 3;
+    }
+    .c13 {
+      grid-area: img3;
+      aspect-ratio: 4 / 3;
+    }
+    .c14 {
+      grid-area: date;
+    }
+    .c15 {
+      grid-area: date2;
+    }
+    .c16 {
+      grid-area: date3;
+    }
+    .c17 {
+      grid-area: title;
+    }
+    .c18 {
+      grid-area: title2;
+    }
+    .c19 {
+      grid-area: title3;
+    }
+    .c20 {
+      display: grid;
+      grid:
+        'title title title' 25px
+        '.     .     .' 200px
+        '.     .     .' 25px
+        '.     .     .' 75px
+        '.     .     .' 200px
+        '.     .     .' 25px
+        '.     .     .' 75px
+        '.     .     .' 200px
+        '.     .     .' 25px
+        '.     .     .' 75px
+        '.     .     .' 200px
+        '.     .     .' 25px
+        '.     .     .' 75px
+        '.     .     .' 200px
+        '.     .     .' 25px
+        '.     .     .' 75px
+        '.     .     .' 200px
+        '.     .     .' 25px
+        '.     .     .' 75px
+        '.     .     .' 200px
+        '.     .     .' 25px
+        '.     .     .' 75px
+        '.     .     .' 200px
+        '.     .     .' 25px
+        '.     .     .' 75px
+        '.     .     .' 200px
+        '.     .     .' 25px
+        '.     .     .' 75px
+        '.     .     .' 200px
+        '.     .     .' 25px
+        '.     .     .' 75px
+        / 1fr 1fr 1fr;
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .c21 {
+      grid-area: title;
+    }
+    .c22 {
+      aspect-ratio: 4 / 3;
+    }
+    .c23 {
+      aspect-ratio: 4 / 3;
+    }
+    .c24 {
+      aspect-ratio: 4 / 3;
+    }
+    .c25 {
+      aspect-ratio: 4 / 3;
+    }
+    .c26 {
+      aspect-ratio: 4 / 3;
+    }
+    .c27 {
+      aspect-ratio: 4 / 3;
+    }
+    .c28 {
+      aspect-ratio: 4 / 3;
+    }
+    .c29 {
+      aspect-ratio: 4 / 3;
+    }
+    .c30 {
+      aspect-ratio: 4 / 3;
+    }
+    .c31 {
+      aspect-ratio: 4 / 3;
+    }
+    .c32 {
+      aspect-ratio: 4 / 3;
+    }
+    .c33 {
+      aspect-ratio: 4 / 3;
+    }
+    .c34 {
+      aspect-ratio: 4 / 3;
+    }
+    .c35 {
+      aspect-ratio: 4 / 3;
+    }
+    .c36 {
+      aspect-ratio: 4 / 3;
+    }
+    .c37 {
+      aspect-ratio: 4 / 3;
+    }
+    .c38 {
+      aspect-ratio: 4 / 3;
+    }
+    .c39 {
+      aspect-ratio: 4 / 3;
+    }
+    .c40 {
+      aspect-ratio: 4 / 3;
+    }
+    .c41 {
+      aspect-ratio: 4 / 3;
+    }
+    .c42 {
+      aspect-ratio: 4 / 3;
+    }
+    .c43 {
+      aspect-ratio: 4 / 3;
+    }
+    .c44 {
+      aspect-ratio: 4 / 3;
+    }
+    .c45 {
+      aspect-ratio: 4 / 3;
+    }
+    .c46 {
+      aspect-ratio: 4 / 3;
+    }
+    .c47 {
+      aspect-ratio: 4 / 3;
+    }
+    .c48 {
+      aspect-ratio: 4 / 3;
+    }
+    .c49 {
+      aspect-ratio: 4 / 3;
+    }
+    .c50 {
+      aspect-ratio: 4 / 3;
+    }
+    .c51 {
+      aspect-ratio: 4 / 3;
+    }
+    .c52 {
+      display: grid;
+      grid:
+        'title    title   title   . title2   .' 25px
+        'img2     img3    img4    . img5     text4' 75px
+        'img2     img3    img4    . img5     button' 25px
+        'text1    text2   text3   . .        .' 25px
+        '.        .       .       . .        .' 50px
+        'section3 section section . section2 section2' 250px
+        / 100px 100px 100px 300px 1fr 1fr;
+      padding: 0.5rem;
+    }
+    .c53 {
+      grid-area: title;
+    }
+    .c54 {
+      grid-area: title2;
+    }
+    .c55 {
+      grid-area: img2;
+      aspect-ratio: 1;
+    }
+    .c56 {
+      grid-area: img3;
+      aspect-ratio: 1;
+    }
+    .c57 {
+      grid-area: img4;
+      aspect-ratio: 1;
+    }
+    .c58 {
+      grid-area: img5;
+      aspect-ratio: 1;
+    }
+    .c59 {
+      grid-area: text4;
+    }
+    .c60 {
+      grid-area: button;
+    }
+    .c61 {
+      grid-area: text1;
+    }
+    .c62 {
+      grid-area: text2;
+    }
+    .c63 {
+      grid-area: text3;
+    }
+    .c64 {
+      grid-area: section3;
+    }
+    .c65 {
+      grid-area: section;
+    }
+    .c66 {
+      grid-area: section2;
+    }
+  </style>
+</head>
+<body>
+<header class="c1">
+    <h1>Page Heading</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Work</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+<main class="c3">
+  <section class="c4">
+    <img src="placeholder.jpg" alt="" class="c5">
+     <p class="c6">UNDERGROUND MEDICINE - November 09, 2026</p>
+    <h2 class="c7">Section Heading</h2>
+    <p class="c8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p class="c9">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+  </section>
+  <section class="c10">
+    <img src="placeholder.jpg" alt="" class="c11">
+    <img src="placeholder.jpg" alt="" class="c12">
+    <img src="placeholder.jpg" alt="" class="c13">
+    <p class="c14">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p class="c15">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p class="c16">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p class="c17">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p class="c18">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p class="c19">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+  </section>
+  <section class="c20">
+    <h2 class="c21">Section Heading</h2>
+    <img src="placeholder.jpg" alt="" class="c22">
+    <img src="placeholder.jpg" alt="" class="c23">
+    <img src="placeholder.jpg" alt="" class="c24">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+    <img src="placeholder.jpg" alt="" class="c25">
+    <img src="placeholder.jpg" alt="" class="c26">
+    <img src="placeholder.jpg" alt="" class="c27">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+    <img src="placeholder.jpg" alt="" class="c28">
+    <img src="placeholder.jpg" alt="" class="c29">
+    <img src="placeholder.jpg" alt="" class="c30">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+    <img src="placeholder.jpg" alt="" class="c31">
+    <img src="placeholder.jpg" alt="" class="c32">
+    <img src="placeholder.jpg" alt="" class="c33">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+    <img src="placeholder.jpg" alt="" class="c34">
+    <img src="placeholder.jpg" alt="" class="c35">
+    <img src="placeholder.jpg" alt="" class="c36">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+    <img src="placeholder.jpg" alt="" class="c37">
+    <img src="placeholder.jpg" alt="" class="c38">
+    <img src="placeholder.jpg" alt="" class="c39">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+    <img src="placeholder.jpg" alt="" class="c40">
+    <img src="placeholder.jpg" alt="" class="c41">
+    <img src="placeholder.jpg" alt="" class="c42">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+    <img src="placeholder.jpg" alt="" class="c43">
+    <img src="placeholder.jpg" alt="" class="c44">
+    <img src="placeholder.jpg" alt="" class="c45">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+    <img src="placeholder.jpg" alt="" class="c46">
+    <img src="placeholder.jpg" alt="" class="c47">
+    <img src="placeholder.jpg" alt="" class="c48">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+    <img src="placeholder.jpg" alt="" class="c49">
+    <img src="placeholder.jpg" alt="" class="c50">
+    <img src="placeholder.jpg" alt="" class="c51">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+    <h3>Sub-heading</h3>
+  </section>
+</main>
+<footer class="c52">
+  <h3 class="c53">Sub-heading</h3>
+  <h3 class="c54">Sub-heading</h3>
+  <img src="placeholder.jpg" alt="" class="c55">
+  <img src="placeholder.jpg" alt="" class="c56">
+  <img src="placeholder.jpg" alt="" class="c57">
+  <img src="placeholder.jpg" alt="" class="c58">
+  <p class="c59">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+  <button class="c60">Click me</button>
+  <p class="c61">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+  <p class="c62">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+  <p class="c63">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+  <p class="c64">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+  <p class="c65">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+  <p class="c66">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed</p>
+</footer>
+  <script>
+  (function() {
+    var s = document.createElement("script");
+    s.src = "https://cdn.jsdelivr.net/gh/gracehoppercenter/validate@1.0.5/validate.js";
+    s.async = false;
+    document.head.appendChild(s);
+  })();
+  </script>
+</body>
+</html>
