@@ -1,7 +1,67 @@
 /*
   ITD110 Zen Garden Project
-  Your name:
-  Your design concept (one sentence):
+  Your name: Quinn Callaway
+  Your design concept (one sentence): I want this to kind of resemble an old amber monitor.
 
   All of your CSS goes in this file.
 */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+body{
+    background-color:#010101; 
+}
+#disclaimer{
+    background-color: Red;
+    border: 2px blue solid;
+}
+h1, h2, h3{
+    color: #FFB000;
+    font-family: "VT323", monospace;
+    text-shadow:
+    0 0 20px rgba(255, 176, 0, 0.4),
+    0 0 40px rgba(255, 176, 0, 0.4),
+    0 0 80px rgba(255, 176, 0, 0.4);
+}
+p, li, a{ 
+    color: #E69E00;
+    font-family: "VT323", monospace;
+    text-shadow:
+    0 0 20px rgba(255, 176, 0, 0.4),
+    0 0 40px rgba(255, 176, 0, 0.4),
+    0 0 80px rgba(255, 176, 0, 0.4);
+}
+a:hover{
+    color: 
+	#FFCC00
+    }
+.quick-link-list li a img{
+    width: 125px;
+    height: auto;
+}
+.quick-link-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+#utility-nav{
+    background-color:#1f1501;
+}
+#utility-nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center; 
+    justify-content:space-around; 
+}
+header{
+    background-color:#1f1501;
+}
+.submenu {
+    display: none;
+}
+.menu-item:hover .submenu,
+.menu-item:focus-within .submenu {
+    display: block;
+}
+#main-nav .menu{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+}
